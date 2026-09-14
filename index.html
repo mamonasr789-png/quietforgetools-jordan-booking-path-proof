@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Offline repair demonstration — QuietForgeTools (not a live client site)</title>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="QuietForgeTools offline repair demonstration. Not a live client website. No trackers." />
+<style>
+  body{font-family:system-ui,sans-serif;max-width:880px;margin:2rem auto;padding:0 1rem;line-height:1.45;color:#111;background:#f6f7f9}
+  .banner{background:#111;color:#fff;padding:0.9rem 1rem;border-radius:8px;margin-bottom:1.25rem}
+  .banner strong{color:#fbbf24}
+  .frame{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.25rem 1.25rem 1.5rem;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  h1{font-size:1.25rem;margin:0 0 .5rem}
+  h2{font-size:1.05rem;margin:1.5rem 0 .6rem}
+  .note{font-size:0.9rem;color:#444}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media(max-width:700px){.grid{grid-template-columns:1fr}}
+  .card{border:1px solid #ddd;border-radius:10px;padding:1rem;background:#fafafa}
+  .before{border-color:#f87171;background:#fef2f2}
+  .after{border-color:#4ade80;background:#f0fdf4}
+  .label{font-size:0.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.5rem}
+  .before .label{color:#b91c1c}
+  .after .label{color:#15803d}
+  code,pre{font-family:ui-monospace,Menlo,monospace;font-size:0.8rem}
+  pre{white-space:pre-wrap;background:#fff;border:1px solid #e5e5e5;padding:.75rem;border-radius:6px;margin:.6rem 0 0}
+  .btn{display:inline-block;padding:.55rem 1rem;border-radius:6px;text-decoration:none;font-weight:600}
+  .btn-bad{background:#111;color:#fff}
+  .btn-good{background:#0f766e;color:#fff}
+  .obs{background:#fffbeb;border:1px solid #f59e0b;padding:.75rem 1rem;border-radius:8px;margin-top:1.25rem;font-size:.9rem}
+  .foot{margin-top:1.25rem;font-size:.85rem;color:#555}
+  .mockbox{border:2px dashed #0f766e;border-radius:10px;padding:1rem;background:#ecfdf5;margin-top:.75rem}
+</style>
+</head>
+<body>
+  <div class="banner"><strong>Offline repair demonstration — not the live website.</strong> This page is a QuietForgeTools static demo on GitHub Pages. It is <em>not</em> hosted on the prospect’s domain, does not change their site, and is not a completed repair or case study. No trackers.</div>
+
+  <div class="frame">
+    <h1>Current path → proposed repaired path</h1>
+    <p class="note">Minimal public demonstration for broken <strong>Book now / Check Availability</strong> CTAs on <code>jordancrosbymedia.co.uk</code>. No branding assets or photos copied. Not their live site.</p>
+
+    <h2>Book now / Check Availability CTA</h2>
+    <div class="grid">
+      <div class="card before">
+        <div class="label">Current path (observed live)</div>
+        <p>Home + pricing pages → <strong>Book now</strong> / <strong>Check Availability</strong></p>
+        <a class="btn btn-bad" href="https://www.jordancrosbymedia.co.uk/book-or-contact-jordan-crosby-media/" rel="nofollow noopener" target="_blank">Book now (live → 404)</a>
+        <pre>Current destination:
+/book-or-contact-jordan-crosby-media/
+
+Observed result: HTTP 404
+(guest leaves with “page not found”
+while package prices are still posted)</pre>
+      </div>
+      <div class="card after">
+        <div class="label">Proposed repaired path (this demo)</div>
+        <p>Same labels → functional mock destination on <em>this</em> page</p>
+        <a class="btn btn-good" href="#mock-book">Book now (demo)</a>
+        <pre>Proposed repair on their site:
+restore or recreate the
+book-or-contact page, then rewire
+home + pricing CTAs to that working
+path (or to an existing contact form
+if that page is intentional).
+
+This green button only scrolls to the
+mock below — it does not claim their
+live URL works.</pre>
+      </div>
+    </div>
+
+    <div class="mockbox" id="mock-book">
+      <div class="label" style="color:#15803d">Functional mock destination (offline only)</div>
+      <h3 style="margin:.2rem 0 0.4rem;font-size:1.05rem">Book or contact — availability enquiry</h3>
+      <p class="note" style="margin:0">Example booking/contact destination a guest would reach after the CTA is repaired. Placeholder layout only — not scraped from their theme, not a live booking form, not a payment page.</p>
+      <p style="margin:.75rem 0 0"><span class="btn btn-good" style="cursor:default">Send enquiry (mock)</span>
+      <span class="note"> — non-functional on purpose</span></p>
+    </div>
+
+    <div class="obs">
+      <strong>Scope of this demo:</strong> only the broken Book now / Check Availability path that currently 404s. Package pricing content on their live site is untouched and not reproduced here.
+    </div>
+
+    <p class="foot">QuietForgeTools · offline demonstration only · <code>noindex,nofollow</code> · no forms · no payments · no analytics</p>
+  </div>
+</body>
+</html>
